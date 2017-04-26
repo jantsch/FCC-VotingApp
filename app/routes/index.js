@@ -20,15 +20,15 @@ module.exports = function (app, passport) {
 			res.sendFile(path + '/public/index.html');
 		});
 
-	app.route('/login')
+	app.route('/signin')
 		.get(function (req, res) {
-			res.sendFile(path + '/public/login.html');
+			res.sendFile(path + '/public/signin.html');
 		});
 
 	app.route('/logout')
 		.get(function (req, res) {
 			req.logout();
-			res.redirect('/login');
+			res.redirect('/signin');
 		});
 
 	app.route('/profile')
