@@ -1,5 +1,6 @@
 'use strict';
 
+var FacebookStrategy = require('passport-facebook').Strategy;
 var GitHubStrategy = require('passport-github').Strategy;
 var User = require('../models/users');
 var configAuth = require('./auth');
@@ -49,4 +50,44 @@ module.exports = function (passport) {
 			});
 		});
 	}));
+
+	passport.use(new FacebookStrategy({
+	    clientID: configAuth.facebookAuth.clientID,
+	    clientSecret: configAuth.facebookAuth.clientSecret,
+	    callbackURL: configAuth.facebookAuth.callbackURL
+  },
+  function(accessToken, refreshToken, profile, cb) {
+
+  	process.nextTick(function () {
+			User.findOne({ 'facebook.id': profile.id }, function (err, user) {
+				if (err) {
+					return cb(err);
+				}
+
+				if (user) {
+					return cb(null, user);
+				} else {
+					var newUser = new User();
+
+					newUser.facebook.id = profile.id;
+					newUser.facebook.username = profile.username;
+					newUser.facebook.displayName = profile.displayName;
+					newUser.nbrClicks.clicks = 0;
+
+					newUser.save(function (err) {
+						if (err) {
+							throw err;
+						}
+
+						return cb(null, newUser);
+					});
+				}
+			});
+		});
+
+    User.findOrCreate({ facebookId: profile.id }, function (err, user) {
+      return cb(err, user);
+    });
+  }
+));
 };
