@@ -47,7 +47,7 @@ module.exports = function (app, passport) {
 	app.route('/auth/github/callback')
 		.get(passport.authenticate('github', {
 			successRedirect: '/',
-			failureRedirect: '/login'
+			failureRedirect: '/signin'
 		}));
 
 	app.route('/auth/facebook')
@@ -56,7 +56,7 @@ module.exports = function (app, passport) {
 	app.route('/auth/facebook/callback')
 		.get(passport.authenticate('facebook', {
 			successRedirect: '/',
-			failureRedirect: '/login'
+			failureRedirect: '/signin'
 		}));
 
 	app.route('/auth/twitter')
@@ -65,7 +65,7 @@ module.exports = function (app, passport) {
 	app.route('/auth/twitter/callback')
 		.get(passport.authenticate('twitter', {
 			successRedirect: '/',
-			failureRedirect: '/login'
+			failureRedirect: '/signin'
 		}));
 
 
