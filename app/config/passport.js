@@ -1,5 +1,6 @@
 'use strict';
 
+var TwitterStrategy = require('passport-twitter').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
 var GitHubStrategy = require('passport-github').Strategy;
 var User = require('../models/users');
@@ -57,7 +58,6 @@ module.exports = function (passport) {
 	    callbackURL: configAuth.facebookAuth.callbackURL
   },
   function(accessToken, refreshToken, profile, cb) {
-
   	process.nextTick(function () {
 			User.findOne({ 'facebook.id': profile.id }, function (err, user) {
 				if (err) {
@@ -84,10 +84,41 @@ module.exports = function (passport) {
 				}
 			});
 		});
+  }));
 
-    User.findOrCreate({ facebookId: profile.id }, function (err, user) {
-      return cb(err, user);
-    });
-  }
-));
+
+
+	passport.use(new TwitterStrategy({
+		    consumerKey: configAuth.twitterAuth.consumerKey,
+		    consumerSecret: configAuth.twitterAuth.consumerSecret,
+		    callbackURL: configAuth.twitterAuth.callbackURL
+  },
+  function(token, tokenSecret, profile, cb) {
+    process.nextTick(function () {
+			User.findOne({ 'twitter.id': profile.id }, function (err, user) {
+				if (err) {
+					return cb(err);
+				}
+
+				if (user) {
+					return cb(null, user);
+				} else {
+					var newUser = new User();
+
+					newUser.twitter.id = profile.id;
+					newUser.twitter.username = profile.username;
+					newUser.twitter.displayName = profile.displayName;
+					newUser.nbrClicks.clicks = 0;
+
+					newUser.save(function (err) {
+						if (err) {
+							throw err;
+						}
+
+						return cb(null, newUser);
+					});
+				}
+			});
+		});
+	}));
 };
