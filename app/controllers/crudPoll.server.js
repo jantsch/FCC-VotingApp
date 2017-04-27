@@ -29,7 +29,7 @@ function PollHandler () {
 		//newPoll
 		//newPoll
 		
-		newPoll.Save(function (err) {
+		newPoll.save(function (err) {
 						if (err) {
 							throw err;
 						}
