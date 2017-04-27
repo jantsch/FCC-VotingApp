@@ -17,7 +17,7 @@ function PollHandler () {
 
 	this.makePoll = function (req, res) {
 		var newPoll = new Poll();
-		console.log(req.body.nome);
+		//console.log(req.body.nome);
 
 		console.log(req.query.nome);
 		//res.json(req);
