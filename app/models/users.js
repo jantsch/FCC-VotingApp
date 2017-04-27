@@ -30,9 +30,9 @@ User.methods.getObj = function(err,user){
 			console.log("TWITTER"+this.twitter);
 			console.log("FACEBOOK"+this.facebook);
 			console.log("USER"+this);
-			console.log(typeof this.github);
+			console.log(typeof this.github.displayName);
 
-	if(typeof this.github != "undefined")
+	if(typeof this.github.displayName != "undefined")
 		return  this.github;
 	else if(this.twitter !== null)
 		return this.twitter;
