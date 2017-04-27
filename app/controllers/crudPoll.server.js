@@ -19,7 +19,7 @@ function PollHandler () {
 		var newPoll = new Poll();
 		//console.log(req.body.nome);
 
-		console.log(req.query.nome);
+		console.log(req.body);
 		//res.json(req);
 		//newPoll. = req.body.name;
 		//newPoll

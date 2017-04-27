@@ -84,7 +84,7 @@ module.exports = function (app, passport) {
 			failureRedirect: '/signin'
 		}));
 
-	app.route('/api/poll').post(isLoggedIn, pollHandler.makePoll )
+	app.route('/api/poll').post(isLoggedIn, pollHandler.makePoll);
 
 
 	app.route('/api/:id/clicks')
