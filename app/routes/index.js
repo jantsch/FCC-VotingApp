@@ -32,22 +32,22 @@ module.exports = function (app, passport) {
 			res.sendFile(path + '/public/signin.html');
 		});
 
-	app.route('mypolls')
+	app.route('/mypolls')
 		.get(isLoggedIn, function (req, res) {
 			res.sendFile(path + '/public/mypolls.html');
 		});
-	app.route('newpoll')
+	app.route('/newpoll')
 		.get(isLoggedIn, function (req, res) {
 			res.sendFile(path + '/public/newpoll.html');
 		});
 
-	app.route('logout')
+	app.route('/logout')
 		.get(function (req, res) {
 			req.logout();
 			res.redirect('/signin');
 		});
 
-	app.route('profile')
+	app.route('/profile')
 		.get(isLoggedIn, function (req, res) {
 			res.sendFile(path + '/public/profile.html');
 		});
