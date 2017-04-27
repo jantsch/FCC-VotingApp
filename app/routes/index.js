@@ -38,7 +38,7 @@ module.exports = function (app, passport) {
 
 	app.route('/api/:id')
 		.get(isLoggedIn, function (req, res) {
-			res.json(req.user.getUserAtributes());
+			res.json(req.user.getObj());
 	});
 
 	app.route('/auth/github')
