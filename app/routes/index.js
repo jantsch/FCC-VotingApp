@@ -92,8 +92,8 @@ module.exports = function (app, passport) {
 		});
 
 	app.route('/api/item/:id')
-			.get(pollHandler.getPoll)
-			.delete(isLoggenIn, pollHandler.deletePoll);
+			.get(pollHandler.getPoll);
+			//.delete(isLoggenIn, pollHandler.deletePoll);
 
 
 	app.route('/api/:id/clicks')
