@@ -38,9 +38,10 @@ module.exports = function (app, passport) {
 
 	app.route('/api/:id')
 		.get(isLoggedIn, function (req, res) {
-			if(req.user.github != undefined)
+			console.log("TWITERRRRRRRRRRR"+req.user.twitter);
+			if(req.user.github !== null)
 				res.json(req.user.github);
-			else if(req.user.twitter != undefined)
+			else if(req.user.twitter != null)
 				res.json(req.user.twitter);
 			else 
 				res.json(req.user.facebook);
