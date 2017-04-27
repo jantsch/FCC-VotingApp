@@ -25,7 +25,11 @@ var User = new Schema({
    }
 });
 
-User.methods.getUserAtributes = function(err){
+User.methods.getObj = function(err){
+			console.log("GITHUBBB"+this.github);
+			console.log("TWITTER"+this.twitter);
+			console.log("FACEBOOK"+this.facebook);
+			console.log("USER"+this);
 	if(this.hasOwnProperty('github'))
 		return  this.github;
 	else if(this.hasOwnProperty('twitter'))
