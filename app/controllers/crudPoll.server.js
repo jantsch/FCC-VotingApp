@@ -17,23 +17,27 @@ function PollHandler () {
 
 	this.makePoll = function (req, res) {
 		var newPoll = new Poll();
-		//console.log(req.body.nome);
-
+		
 		console.log(req.body);
 		//res.json(req);
-		//newPoll. = req.body.name;
+		newPoll.name = req.body.name;
+		newPoll.totalVotes = 0;
+		newPoll.options.push({
+				id: mongoose.Types.ObjectId(),
+				text: req.body.options,
+				votes: 0
+		})
 		//newPoll
 		//newPoll
-		//newPoll
-		/**
+		
 		newPoll.Save(function (err) {
 						if (err) {
 							throw err;
 						}
 		})
 			
-		res.json(result.nbrClicks);
-		**/
+		res.json(newPoll);
+		
 	};
 /**
 	this.resetClicks = function (req, res) {
