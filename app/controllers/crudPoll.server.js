@@ -17,17 +17,16 @@ function PollHandler () {
 
 	this.makePoll = function (req, res) {
 		var newPoll = new Poll();
-		
-		console.log(req.body);
-		//res.json(req);
+		console.log("REQ USER " + req.user);
 		newPoll.name = req.body.name;
+		newPoll.owner_name = req.user.displayName;
+		//newPoll.owner_id = req.user._id;
 		var options = req.body.option.split('\r\n');
 		options.forEach(function(item){
 			newPoll.options.push({
 				text: item			
 			})
-		})
-		
+		})		
 		
 		newPoll.save(function (err) {
 						if (err) {
