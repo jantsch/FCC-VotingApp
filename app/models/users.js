@@ -25,4 +25,16 @@ var User = new Schema({
    }
 });
 
+User.methods.getObj = function(err,user){
+			console.log("GITHUBBB"+this.github);
+			console.log("TWITTER"+this.twitter);
+			console.log("USER"+this);
+	if(this.github !== null)
+		return  this.github;
+	else if(this.twitter !== null)
+		return this.twitter;
+	else 
+		return this.facebook;
+}
+
 module.exports = mongoose.model('User', User);
