@@ -32,7 +32,7 @@ User.methods.getObj = function(err,user){
 			console.log("USER"+this);
 			console.log(this.hasOwnProperty('github'));
 
-	if(this.hasOwnProperty("github"))
+	if(typeof this.github != "undefined")
 		return  this.github;
 	else if(this.twitter !== null)
 		return this.twitter;
