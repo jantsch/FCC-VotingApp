@@ -86,6 +86,15 @@ module.exports = function (app, passport) {
 
 	app.route('/api/poll').post(isLoggedIn, pollHandler.makePoll);
 
+	app.route('/api/poll/:id')
+			.get(isLoggedIn,function (req, res) {
+			res.sendFile(path + '/public/poll.html');
+		});
+
+	app.route('/api/item/:id')
+			.get(pollHandler.getPoll)
+			.delete(isLoggenIn, pollHandler.deletePoll);
+
 
 	app.route('/api/:id/clicks')
 		.get(isLoggedIn, clickHandler.getClicks)

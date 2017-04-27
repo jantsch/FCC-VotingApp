@@ -3,24 +3,26 @@
 var Poll = require('../models/poll.js');
 
 function PollHandler () {
-/**
-	this.getClicks = function (req, res) {
-		Users
-			.findOne({ 'github.id': req.user.github.id }, { '_id': false })
-			.exec(function (err, result) {
-				if (err) { throw err; }
 
-				res.json(result.nbrClicks);
-			});
+	this.getPool = function (req, res) {
+
+		var poll_id = req.params.id;
+
+		Poll.findOne({'_id': poll_id}).exec(function(err,result){
+				if (err) { throw err; }
+				res.json(result);
+
+		})
+		
 	};
-	**/
+	
 
 	this.makePoll = function (req, res) {
 		var newPoll = new Poll();
 		console.log("REQ USER " + req.user);
 		newPoll.name = req.body.name;
 		newPoll.owner_name = req.user.displayName;
-		//newPoll.owner_id = req.user._id;
+		newPoll.owner_id = req.user._id;
 		var options = req.body.option.split('\r\n');
 		options.forEach(function(item){
 			newPoll.options.push({
@@ -32,11 +34,10 @@ function PollHandler () {
 						if (err) {
 							throw err;
 						}
+						res.redirect('/api/item/'+ newPoll._id);
 		})
 			
-		res.json(newPoll);
-		
-	};
+		};
 /**
 	this.resetClicks = function (req, res) {
 		Users
