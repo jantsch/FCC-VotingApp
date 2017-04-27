@@ -33,7 +33,7 @@ module.exports = function (app, passport) {
 
 	app.route('/mypolls')
 		.get(isLoggedIn, function (req, res) {
-			res.sendFile(path + '/public/main.html');
+			res.sendFile(path + '/public/mypolls.html');
 		});
 
 	app.route('/logout')
