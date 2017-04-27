@@ -48,15 +48,15 @@
 		<div class="container" >
 			  <div class="jumbotron text-center">
 			    <h1>Make a new poll!</h1> 
-			    <form>
+			    <form action="/api/poll" method="post">
 					    <div class="form-group">
-							    <label for="inputemail">Name:</label>
-							    <input type="text" class="form-control" id="inputemail" placeholder="Enter Name">
+							    <label for="inputName">Name:</label>
+							    <input type="text" name="name" class="form-control" id="inputName" placeholder="Enter Name">
 							   
 						</div>
 					    <div class="form-group">
 							    <label for="optionInput">Options (seperated by line):</label>
-							    <textarea class="form-control" id="optionInput" rows="4" placeholder="Option 1 &#10;Option 2 &#10;Option 3 &#10;Option 4"></textarea>
+							    <textarea class="form-control" id="optionInput" name="option" rows="4" placeholder="Option 1 &#10;Option 2 &#10;Option 3 &#10;Option 4"></textarea>
 						</div>
 					   	<button type="submit" class="btn btn-primary"> Make </button>
 			   	</form>

@@ -2,6 +2,7 @@
 
 var path = process.cwd();
 var ClickHandler = require(path + '/app/controllers/clickHandler.server.js');
+var CrudPoll = require(path + '/app/controllers/crudPoll.server.js');
 
 module.exports = function (app, passport) {
 
@@ -14,7 +15,7 @@ module.exports = function (app, passport) {
 	}
 
 	var clickHandler = new ClickHandler();
-
+    var crudPoll = new CrudPoll();
 
 	app.route('/')
 		.get(function (req, res) {
@@ -82,6 +83,8 @@ module.exports = function (app, passport) {
 			successRedirect: '/mypolls',
 			failureRedirect: '/signin'
 		}));
+
+	app.route('/api/poll').post(isLoggedIn, crudPoll.makePoll )
 
 
 	app.route('/api/:id/clicks')
