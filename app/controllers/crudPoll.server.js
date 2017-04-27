@@ -21,13 +21,14 @@ function PollHandler () {
 		console.log(req.body);
 		//res.json(req);
 		newPoll.name = req.body.name;
-		newPoll.totalVotes = 0;
-		newPoll.options.push({
-				text: req.body.options,
-				votes: 0
+		var options = req.body.option.split('/n');
+		options.forEach(function(item){
+			newPoll.options.push({
+				text: item			
+			})
+
 		})
-		//newPoll
-		//newPoll
+		
 		
 		newPoll.save(function (err) {
 						if (err) {

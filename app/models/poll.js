@@ -7,12 +7,11 @@ var Poll = new Schema({
 	name: String,
 	owner_id: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
   	owner_name: String,
-	totalVotes: Number,
+	totalVotes: {type:Number, default: 0}
 	options: [
 	   {
-	      id: mongoose.Schema.Types.ObjectId,
 	      text: String,
-		  votes: Number
+		  votes: {type:Number, default: 0}
 	   }
   ],
 	
