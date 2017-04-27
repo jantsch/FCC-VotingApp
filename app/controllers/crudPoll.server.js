@@ -4,7 +4,7 @@ var Poll = require('../models/poll.js');
 
 function PollHandler () {
 
-	this.getPool = function (req, res) {
+	this.getPoll = function (req, res) {
 
 		var poll_id = req.params.id;
 
