@@ -25,11 +25,12 @@ var User = new Schema({
    }
 });
 
-User.methods.getObj = function(err,user){
+User.methods.getObj = function(err){
 			console.log("GITHUBBB"+this.github);
 			console.log("TWITTER"+this.twitter);
+			console.log("FACEBOOK"+this.facebook);
 			console.log("USER"+this);
-	if(this.github !== null)
+	if(this.github !== {})
 		return  this.github;
 	else if(this.twitter !== null)
 		return this.twitter;
