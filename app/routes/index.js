@@ -15,14 +15,25 @@ module.exports = function (app, passport) {
 
 	var clickHandler = new ClickHandler();
 
+
 	app.route('/')
-		.get(isLoggedIn, function (req, res) {
-			res.sendFile(path + '/public/main.html');
+		.get(function (req, res) {
+			res.redirect('/polls');
+		});	
+
+	app.route('/polls')
+		.get(function (req, res) {
+			res.sendFile(path + '/public/polls.html');
 		});
 
 	app.route('/signin')
 		.get(function (req, res) {
 			res.sendFile(path + '/public/signin.html');
+		});
+
+	app.route('/mypolls')
+		.get(isLoggedIn, function (req, res) {
+			res.sendFile(path + '/public/main.html');
 		});
 
 	app.route('/logout')
