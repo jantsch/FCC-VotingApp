@@ -34,7 +34,7 @@ function PollHandler () {
 						if (err) {
 							throw err;
 						}
-						res.redirect('/api/item/'+ newPoll._id);
+						res.redirect('/api/poll/'+ newPoll._id);
 		})
 			
 		};
