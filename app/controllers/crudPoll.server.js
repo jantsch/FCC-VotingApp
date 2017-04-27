@@ -23,7 +23,6 @@ function PollHandler () {
 		newPoll.name = req.body.name;
 		newPoll.totalVotes = 0;
 		newPoll.options.push({
-				id: mongoose.Types.ObjectId(),
 				text: req.body.options,
 				votes: 0
 		})

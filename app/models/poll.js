@@ -10,7 +10,7 @@ var Poll = new Schema({
 	totalVotes: Number,
 	options: [
 	   {
-	      id: Number,
+	      id: mongoose.Types.ObjectId(),
 	      text: String,
 		  votes: Number
 	   }
