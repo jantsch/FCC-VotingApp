@@ -2,8 +2,8 @@
 
 var Poll = require('../models/poll.js');
 
-function CrudPoll () {
-
+function PollHandler () {
+/**
 	this.getClicks = function (req, res) {
 		Users
 			.findOne({ 'github.id': req.user.github.id }, { '_id': false })
@@ -13,6 +13,7 @@ function CrudPoll () {
 				res.json(result.nbrClicks);
 			});
 	};
+	**/
 
 	this.makePoll = function (req, res) {
 		var newPoll = new Poll();
@@ -32,7 +33,7 @@ function CrudPoll () {
 		res.json(result.nbrClicks);
 		**/
 	};
-
+/**
 	this.resetClicks = function (req, res) {
 		Users
 			.findOneAndUpdate({ 'github.id': req.user.github.id }, { 'nbrClicks.clicks': 0 })
@@ -43,7 +44,7 @@ function CrudPoll () {
 				}
 			);
 	};
-
+**/
 }
 
-module.exports = ClickHandler;
+module.exports = PollHandler;

@@ -2,7 +2,7 @@
 
 var path = process.cwd();
 var ClickHandler = require(path + '/app/controllers/clickHandler.server.js');
-var CrudPoll = require(path + '/app/controllers/crudPoll.server.js');
+var PollHandler = require(path + '/app/controllers/crudPoll.server.js');
 
 module.exports = function (app, passport) {
 
@@ -15,7 +15,7 @@ module.exports = function (app, passport) {
 	}
 
 	var clickHandler = new ClickHandler();
-    var crudPoll = new CrudPoll();
+    var pollHandler = new PollHandler();
 
 	app.route('/')
 		.get(function (req, res) {
@@ -84,7 +84,7 @@ module.exports = function (app, passport) {
 			failureRedirect: '/signin'
 		}));
 
-	app.route('/api/poll').post(isLoggedIn, crudPoll.makePoll )
+	app.route('/api/poll').post(isLoggedIn, pollHandler.makePoll )
 
 
 	app.route('/api/:id/clicks')
