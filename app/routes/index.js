@@ -38,7 +38,13 @@ module.exports = function (app, passport) {
 
 	app.route('/api/:id')
 		.get(isLoggedIn, function (req, res) {
-			res.json(req.user.github);
+			if(req.user.github != undefined)
+				res.json(req.user.github);
+			else if(req.user.twitter != undefined)
+				res.json(req.user.twitter);
+			else 
+				res.json(req.user.facebook);
+
 		});
 
 	app.route('/auth/github')
