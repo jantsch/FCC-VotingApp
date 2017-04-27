@@ -30,7 +30,7 @@ User.methods.getObj = function(err,user){
 			console.log("TWITTER"+this.twitter);
 			console.log("FACEBOOK"+this.facebook);
 			console.log("USER"+this);
-			console.log(this.hasOwnProperty('github'));
+			console.log(typeof this.github);
 
 	if(typeof this.github != "undefined")
 		return  this.github;
