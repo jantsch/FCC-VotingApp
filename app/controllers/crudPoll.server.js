@@ -21,12 +21,11 @@ function PollHandler () {
 		console.log(req.body);
 		//res.json(req);
 		newPoll.name = req.body.name;
-		var options = req.body.option.split('/n');
+		var options = req.body.option.split('\r\n');
 		options.forEach(function(item){
 			newPoll.options.push({
 				text: item			
 			})
-
 		})
 		
 		
