@@ -7,7 +7,8 @@ function PollHandler () {
 	this.getPoll = function (req, res) {
 
 		var poll_id = req.params.id;
-
+		console.log("Server");
+		console.log(req.params.id);
 		Poll.findOne({'_id': poll_id}).exec(function(err,result){
 				if (err) { throw err; }
 				res.json(result);

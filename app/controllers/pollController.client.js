@@ -2,18 +2,18 @@
 
 (function () {
 
-   var addButton = document.querySelector('.btn-add');
-   var deleteButton = document.querySelector('.btn-delete');
-   var clickNbr = document.querySelector('#click-nbr');
+   var question_name = document.querySelector('#question-name');
+   var question_owner = document.querySelector('#question-owner'); 
    var apiUrl = appUrl + '/api/item/:id';
 
    function updatePoll (data) {
-      var clicksObject = JSON.parse(data);
-      clickNbr.innerHTML = clicksObject.clicks;
+      console.log("Client");
+      console.log(JSON.parse(data));
+      //clickNbr.innerHTML = clicksObject.clicks;
    }
 
    ajaxFunctions.ready(ajaxFunctions.ajaxRequest('GET', apiUrl, updatePoll));
-
+/**
    addButton.addEventListener('click', function () {
 
       ajaxFunctions.ajaxRequest('POST', apiUrl, function () {
@@ -29,5 +29,5 @@
       });
 
    }, false);
-
+**/
 })();
