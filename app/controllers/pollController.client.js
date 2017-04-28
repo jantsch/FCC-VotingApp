@@ -14,9 +14,14 @@
     console.log("ajax callback response:" + data);
       $('#question-name').text(data.name);
       $('#question-owner').text("by " + data.owner_name);
+
       console.log(data.options)
-      $('#tablebody').append("<tr><td><div class=\"radio\"><label><input type=\"radio\" id='option1' name=\"optradio\">" +
-                              data.option[0].text + "</label></div></td><td></td></tr>")
+      data.options.forEach(function(item){
+          $('#tablebody').append("<tr><td><div class=\"radio\"><label><input type=\"radio\" id='"+item._id+"' name=\"optradio\">" +
+                              item.text + "</label></div></td><td></td></tr>");
+
+      })
+     
 });
 
 
