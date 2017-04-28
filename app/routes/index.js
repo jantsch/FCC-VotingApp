@@ -87,7 +87,7 @@ module.exports = function (app, passport) {
 			res.json(req.user.getObj());
 	});
 	app.route('/api/poll')
-			.get(isLoggedIn, pollHandler.getAllPolls)
+			.get(pollHandler.getAllPolls)
 			.post(isLoggedIn, pollHandler.makePoll);
 
 	app.route('/api/:id/mypolls').get(isLoggedIn, pollHandler.getMyPolls);
