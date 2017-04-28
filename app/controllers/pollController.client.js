@@ -17,7 +17,7 @@
       console.log(teste.name);
       var data_parsed = JSON.parse(data);
       
-      question_name.text(data.name);
+      question_name.text(teste.name);
       question_owner.text("by " + data_parsed.owner_name);
    }
 
@@ -28,12 +28,12 @@
     dataType: "json",
 }).done(function ( data ) {
     console.log("ajax callback response:" + data.name);
-      $('#question-name').text(data.name);
+      //$('#question-name').text(data.name);
       question_owner.text("by " + data.owner_name);
 });
 
 
-//   ajaxFunctions.ready(ajaxFunctions.ajaxRequest('GET', apiUrl, updatePoll));
+   ajaxFunctions.ready(ajaxFunctions.ajaxRequest('GET', apiUrl, updatePoll));
 /**
    addButton.addEventListener('click', function () {
 
