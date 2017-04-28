@@ -28,10 +28,12 @@
     dataType: "json",
 }).done(function ( data ) {
     console.log("ajax callback response:" + data.name);
+      question_name.text(data.name);
+      question_owner.text("by " + data.owner_name);
 });
 
 
-   ajaxFunctions.ready(ajaxFunctions.ajaxRequest('GET', apiUrl, updatePoll));
+//   ajaxFunctions.ready(ajaxFunctions.ajaxRequest('GET', apiUrl, updatePoll));
 /**
    addButton.addEventListener('click', function () {
 
