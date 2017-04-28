@@ -5,6 +5,7 @@
    var question_name = document.querySelector('#question-name');
    var question_owner = document.querySelector('#question-owner'); 
    var apiUrl = appUrl + '/api/item/:id';
+   
    console.log(window.location.hash);
 
    function updatePoll (data) {
@@ -13,7 +14,7 @@
       //clickNbr.innerHTML = clicksObject.clicks;
    }
 
-   ajaxFunctions.ready(ajaxFunctions.ajaxRequest('GET', apiUrl, updatePoll));
+  // ajaxFunctions.ready(ajaxFunctions.ajaxRequest('GET', apiUrl, updatePoll));
 /**
    addButton.addEventListener('click', function () {
 
