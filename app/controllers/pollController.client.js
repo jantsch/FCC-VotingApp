@@ -13,6 +13,7 @@
    function updatePoll (data) {
       console.log("Client");
       console.log(JSON.parse(data));
+      console.log(data.nome);
       question_name.text(data.name);
       question_owner.text("by " + data.question_owner);
    }
