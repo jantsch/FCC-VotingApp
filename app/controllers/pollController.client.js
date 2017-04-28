@@ -13,8 +13,8 @@
    function updatePoll (data) {
       console.log("Client");
       console.log(JSON.parse(data));
-      question_name.html(data.name);
-      question_owner.html("by " + data.question_owner);
+      question_name.text(data.name);
+      question_owner.text("by " + data.question_owner);
    }
 
    ajaxFunctions.ready(ajaxFunctions.ajaxRequest('GET', apiUrl, updatePoll));
