@@ -13,7 +13,7 @@
       console.log(data);
       var data_parsed = JSON.parse(data);
       
-      question_name.text(data_parsed.name);
+      question_name.text(data.name);
       question_owner.text("by " + data_parsed.question_owner);
    }
 
