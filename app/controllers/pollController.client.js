@@ -4,8 +4,6 @@
 
    var question_name = $('#question-name');
    var question_owner =$('#question-owner'); 
-   var apiUrl = appUrl + '/api/item/'+id;
-  
    var apiUrl = appUrl + '/api/item/'+getId();
 
 
