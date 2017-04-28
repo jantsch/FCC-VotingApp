@@ -19,6 +19,16 @@
       question_owner.text("by " + data_parsed.question_owner);
    }
 
+
+   $.ajax({
+    type: "get",
+    url: apiUrl, 
+    dataType: "json",
+}).done(function ( data ) {
+    console.log("ajax callback response:" + data);
+});
+
+
    ajaxFunctions.ready(ajaxFunctions.ajaxRequest('GET', apiUrl, updatePoll));
 /**
    addButton.addEventListener('click', function () {
