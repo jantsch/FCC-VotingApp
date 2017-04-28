@@ -10,11 +10,11 @@
     type: "get",
     url: apiUrl, 
     dataType: "json",
-}).done(function ( teste ) {
-    console.log("ajax callback response:" + teste);
+}).done(function ( data ) {
+    console.log("ajax callback response:" + data);
 
-      console.log(teste);
-      $('#polllist').append(teste.name);
+      console.log(data);
+      $('#polllist').append(data.name);
   //    data.forEach(function(item){
     //      $('#polllist').append("<a href=\"#\" class=\"list-group-item\">"+item.name+"</a>");
 
