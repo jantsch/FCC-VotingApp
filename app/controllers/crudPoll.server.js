@@ -22,7 +22,7 @@ function PollHandler () {
 		Poll.find({'owner_id': req.user._id}).exec(function(err,result){
 				if (err) { throw err; }	
 				console.log(result);			
-				res.json(result);
+				res.json("RODRIGO");
 
 		})
 		
