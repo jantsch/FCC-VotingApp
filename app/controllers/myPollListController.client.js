@@ -16,7 +16,7 @@
       console.log(data);
       
       data.forEach(function(item){
-          $('#polllist').append("<a href=\"#\" class=\"list-group-item\">"+item.name+"</a>");
+          $('#polllist').append("<a href=\"poll/"+item._id +"\" class=\"list-group-item\">"+item.name+"</a>");
 
       })
      

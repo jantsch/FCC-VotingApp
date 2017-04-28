@@ -44,7 +44,7 @@ function PollHandler () {
 						if (err) {
 							throw err;
 						}
-						res.redirect('/api/poll/'+ newPoll._id);
+						res.redirect('/poll/'+ newPoll._id);
 		})
 			
 		};
