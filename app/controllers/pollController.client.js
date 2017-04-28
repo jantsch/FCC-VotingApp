@@ -11,8 +11,8 @@
       console.log("Client");
       //console.log(JSON.parse(data));
       console.log(data);
-      console.log(data.name);
-      console.log(JSON.parse(data.name));
+      console.log(data["name"]);
+      console.log(JSON.parse(data["name"]));
       var data_parsed = JSON.parse(data);
       
       question_name.text(data.name);
