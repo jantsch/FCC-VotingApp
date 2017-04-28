@@ -5,17 +5,16 @@
    var question_name = $('#question-name');
    var question_owner =$('#question-owner'); 
    var apiUrl = appUrl + '/api/item/'+id;
-   var id_array = window.location.href.split('/');
-   var id = id_array[id_array.length -1];
-   console.log(id);
-   var apiUrl = appUrl + '/api/item/'+id;
+  
+   var apiUrl = appUrl + '/api/item/'+getId();
+
 
    function updatePoll (data) {
       console.log("Client");
       //console.log(JSON.parse(data));
-      
+      console.log(data);
       var data_parsed = JSON.parse(data);
-      console.log(data_parsed.nome);
+      
       question_name.text(data_parsed.name);
       question_owner.text("by " + data_parsed.question_owner);
    }
@@ -38,4 +37,10 @@
 
    }, false);
 **/
+
+function getId()
+{
+    var id_array = window.location.href.split('/');
+    return id_array[id_array.length -1];
+}
 })();
