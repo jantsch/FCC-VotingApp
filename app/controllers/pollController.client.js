@@ -6,7 +6,7 @@
    var question_owner = document.querySelector('#question-owner'); 
    var apiUrl = appUrl + '/api/item/:id';
    
-   console.log(window.location.hash);
+   console.log(window.location.href);
 
    function updatePoll (data) {
       console.log("Client");
