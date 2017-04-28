@@ -28,7 +28,7 @@
     dataType: "json",
 }).done(function ( data ) {
     console.log("ajax callback response:" + data.name);
-      question_name.text(data.name);
+      $('#question-name').text(data.name);
       question_owner.text("by " + data.owner_name);
 });
 
