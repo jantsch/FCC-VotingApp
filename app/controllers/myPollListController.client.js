@@ -15,10 +15,10 @@
 
       console.log(data);
       $('#polllist').append(data.name);
-      data.forEach(function(item){
-          $('#polllist').append("<a href=\"#\" class=\"list-group-item\">"+item.name+"</a>");
+  //    data.forEach(function(item){
+    //      $('#polllist').append("<a href=\"#\" class=\"list-group-item\">"+item.name+"</a>");
 
-      })
+     // })
      
 });
 
