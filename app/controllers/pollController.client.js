@@ -12,11 +12,13 @@
       //console.log(JSON.parse(data));
       console.log(data);
       console.log(JSON.parse(data));
-      console.log(data.name);
+      var teste = JSON.parse(data);
+      console.log(teste);
+      console.log(teste.name);
       var data_parsed = JSON.parse(data);
       
       question_name.text(data.name);
-      question_owner.text("by " + data_parsed.question_owner);
+      question_owner.text("by " + data_parsed.owner_name);
    }
 
 
@@ -25,7 +27,7 @@
     url: apiUrl, 
     dataType: "json",
 }).done(function ( data ) {
-    console.log("ajax callback response:" + data);
+    console.log("ajax callback response:" + data.name);
 });
 
 
