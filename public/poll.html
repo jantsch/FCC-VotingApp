@@ -15,7 +15,7 @@
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-		<link href="../public/css/newpoll.css" rel="stylesheet" type="text/css">
+		<link href="../public/css/poll.css" rel="stylesheet" type="text/css">		
 	   	
 	</head>
 
@@ -46,9 +46,45 @@
 		</nav>
 
 		<div class="container" >
-			  <div class="jumbotron text-center">
-			    <h1>RODRIGO JANTSCH</h1> 
-			   
+			  <div class="jumbotron">
+			  	<div class="row">
+			  		<div class="col-md-4  text-center">
+			  			<h2 id="question-name">LEGAL</h2>
+			  			<h5	id="question-owner">LEGAL</h5>
+			  		</div>
+			  		<div class="col-md-4">
+					  		<form action="" method="post">
+					  		<table class="table table-responsive">    
+								     <tbody>
+								    
+								         <tr>
+								             <td>
+								                 <div class="radio">
+								                     <label><input type="radio" id='option1' name="optradio">Option 1</label>
+								                 </div>
+								             </td>
+								             <td>             
+								             </td>
+								         </tr>
+								         <tr>
+								             <td>
+								                 <div class="radio">
+								                     <label><input type="radio" id='option2' name="optradio">Option 2</label>
+								                </div>
+								             </td>
+								             <td>               
+								             </td>
+								         </tr>								        
+								     </tbody>
+							</table>
+					  			<button type="submit" class="btn btn-primary">Vote</button>
+					  		</form>
+			  		</div>
+			  		<div class="col-md-4 ">
+			  		<h5>Sorry, no comments yet.</h5>
+			  		</div>
+			  	</div>
+			    
 			  </div>
 
 		</div>
