@@ -2,8 +2,8 @@
 
 (function () {
 
-   var question_name = document.querySelector('#question-name');
-   var question_owner = document.querySelector('#question-owner'); 
+   var question_name = $('#question-name');
+   var question_owner =$('#question-owner'); 
    var apiUrl = appUrl + '/api/item/'+id;
    var id_array = window.location.href.split('/');
    var id = id_array[id_array.length -1];
