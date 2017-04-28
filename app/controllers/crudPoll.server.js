@@ -17,9 +17,19 @@ function PollHandler () {
 
 	this.getMyPolls = function (req, res) {
 
-		console.log("Server");
-		console.log(req.user._id);
 		Poll.find({'owner_id': req.user._id}).exec(function(err,result){
+				if (err) { throw err; }				
+				res.json(result);
+
+		})
+		
+	};
+
+
+	this.getAllPolls = function (req, res) {
+
+		
+		Poll.find({}).exec(function(err,result){
 				if (err) { throw err; }				
 				res.json(result);
 

@@ -15,6 +15,9 @@
 
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+		<script type="text/javascript" src="../../controllers/pollsController.client.js"></script>
+		
 	</head>
 
 	<body>
@@ -45,10 +48,8 @@
 			    <h1>FCC - Voting</h1> 
 			    <p>Below are polls hosted by fcc-voting.</p>
 			    <p>Select a poll to see the results and vote, or sign-in to make a new poll.</p> 
-			    <div class="list-group">
-				  <a href="#" class="list-group-item">First item</a>
-				  <a href="#" class="list-group-item">Second item</a>
-				  <a href="#" class="list-group-item">Third item</a>
+			    <div class="list-group" id="polllist">
+				  
 				</div>
 			  </div>
 
