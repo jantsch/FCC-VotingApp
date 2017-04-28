@@ -24,7 +24,10 @@ module.exports = function (app, passport) {
 
 	app.route('/polls')
 		.get(function (req, res) {
-			res.sendFile(path + '/public/polls.html');
+			if(req.isAuthenticated())
+				res.sendFile(path + '/public/polls-auth.html');
+			else
+				res.sendFile(path + '/public/polls.html');
 		});
 
 	app.route('/signin')
@@ -94,7 +97,7 @@ module.exports = function (app, passport) {
 
 
 	app.route('/poll/:id')
-			.get(isLoggedIn,function (req, res) {
+			.get(function (req, res) {
 			res.sendFile(path + '/public/poll.html');
 		});
 
