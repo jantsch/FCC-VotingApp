@@ -4,9 +4,11 @@
 
    var question_name = document.querySelector('#question-name');
    var question_owner = document.querySelector('#question-owner'); 
-   var apiUrl = appUrl + '/api/item/:id';
-   
-   console.log(window.location.href);
+   var apiUrl = appUrl + '/api/item/'+id;
+   var id_array = window.location.href.split('/');
+   var id = id_array[id_array.length -1];
+   console.log(id);
+   var apiUrl = appUrl + '/api/item/'+id;
 
    function updatePoll (data) {
       console.log("Client");
@@ -14,7 +16,7 @@
       //clickNbr.innerHTML = clicksObject.clicks;
    }
 
-  // ajaxFunctions.ready(ajaxFunctions.ajaxRequest('GET', apiUrl, updatePoll));
+   ajaxFunctions.ready(ajaxFunctions.ajaxRequest('GET', apiUrl, updatePoll));
 /**
    addButton.addEventListener('click', function () {
 
