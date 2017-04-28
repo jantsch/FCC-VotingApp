@@ -35,4 +35,6 @@ User.methods.getObj = function(){
 		return this.facebook;
 }
 
+
+
 module.exports = mongoose.model('User', User);
