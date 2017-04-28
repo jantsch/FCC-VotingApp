@@ -2,7 +2,7 @@
 
 (function () {
 
-   var apiUrl = appUrl + '/api/mypolls/';
+   var apiUrl = window.location.origin + '/api/mypolls/';
 
 
 
