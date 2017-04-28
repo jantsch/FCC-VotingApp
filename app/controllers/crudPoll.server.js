@@ -28,9 +28,11 @@ function PollHandler () {
 
 	this.getAllPolls = function (req, res) {
 
-		
+		console.log("SERVERRRRRRRRRRRRRRRR");
 		Poll.find({}).exec(function(err,result){
-				if (err) { throw err; }				
+				if (err) { throw err; }		
+
+				console.log(result);		
 				res.json(result);
 
 		})
