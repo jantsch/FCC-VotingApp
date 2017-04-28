@@ -13,7 +13,8 @@
    function updatePoll (data) {
       console.log("Client");
       console.log(JSON.parse(data));
-      //clickNbr.innerHTML = clicksObject.clicks;
+      question_name.innerHTML = data.name;
+      question_owner.innerHTML = data.name;
    }
 
    ajaxFunctions.ready(ajaxFunctions.ajaxRequest('GET', apiUrl, updatePoll));

@@ -22,6 +22,8 @@ function PollHandler () {
 		var newPoll = new Poll();
 		console.log("REQ USER " + req.user);
 		newPoll.name = req.body.name;
+		console.log(req.user.displayName);
+		console.log(req.user);
 		newPoll.owner_name = req.user.displayName;
 		newPoll.owner_id = req.user._id;
 		var options = req.body.option.split('\r\n');
