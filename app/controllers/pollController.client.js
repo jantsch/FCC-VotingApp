@@ -2,24 +2,8 @@
 
 (function () {
 
-   var question_name = $('#question-name');
-   var question_owner =$('#question-owner'); 
    var apiUrl = appUrl + '/api/item/'+getId();
 
-
-   function updatePoll (data) {
-      console.log("Client");
-      //console.log(JSON.parse(data));
-      console.log(data);
-      console.log(JSON.parse(data));
-      var teste = JSON.parse(data);
-      console.log(teste);
-      console.log(teste.name);
-      var data_parsed = JSON.parse(data);
-      
-      question_name.text(teste.name);
-      question_owner.text("by " + data_parsed.owner_name);
-   }
 
 
    $.ajax({
@@ -27,30 +11,15 @@
     url: apiUrl, 
     dataType: "json",
 }).done(function ( data ) {
-    console.log("ajax callback response:" + data.name);
-      //$('#question-name').text(data.name);
-      question_owner.text("by " + data.owner_name);
+    console.log("ajax callback response:" + data);
+      $('#question-name').text(data.name);
+      $('#question-owner').text("by " + data.owner_name);
+      console.log(data.options)
+      $('#tablebody').append("<tr><td><div class=\"radio\"><label><input type=\"radio\" id='option1' name=\"optradio\">" +
+                              data.option[0].text + "</label></div></td><td></td></tr>")
 });
 
 
-   ajaxFunctions.ready(ajaxFunctions.ajaxRequest('GET', apiUrl, updatePoll));
-/**
-   addButton.addEventListener('click', function () {
-
-      ajaxFunctions.ajaxRequest('POST', apiUrl, function () {
-         ajaxFunctions.ajaxRequest('GET', apiUrl, updatePoll);
-      });
-
-   }, false);
-
-   deleteButton.addEventListener('click', function () {
-
-      ajaxFunctions.ajaxRequest('DELETE', apiUrl, function () {
-         ajaxFunctions.ajaxRequest('GET', apiUrl, updatePoll);
-      });
-
-   }, false);
-**/
 
 function getId()
 {
