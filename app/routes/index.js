@@ -82,14 +82,13 @@ module.exports = function (app, passport) {
 		}));
 
 
-	app.route('/api/poll')
-			.get(isLoggedIn, pollHandler.getAllPolls)
-			.post(isLoggedIn, pollHandler.makePoll);
-
-	app.route('/api/:id')
+	app.route('/api/user')
 		.get(isLoggedIn, function (req, res) {
 			res.json(req.user.getObj());
 	});
+	app.route('/api/poll')
+			.get(isLoggedIn, pollHandler.getAllPolls)
+			.post(isLoggedIn, pollHandler.makePoll);
 
 	app.route('/api/:id/mypolls').get(isLoggedIn, pollHandler.getMyPolls);
 
