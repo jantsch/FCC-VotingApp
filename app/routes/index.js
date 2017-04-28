@@ -52,10 +52,7 @@ module.exports = function (app, passport) {
 			res.sendFile(path + '/public/profile.html');
 		});
 
-	app.route('/api/:id')
-		.get(isLoggedIn, function (req, res) {
-			res.json(req.user.getObj());
-	});
+	
 
 	app.route('/auth/github')
 		.get(passport.authenticate('github'));
@@ -84,9 +81,14 @@ module.exports = function (app, passport) {
 			failureRedirect: '/signin'
 		}));
 
+
+	app.route('/api/:id')
+		.get(isLoggedIn, function (req, res) {
+			res.json(req.user.getObj());
+	});
 	app.route('/api/poll').post(isLoggedIn, pollHandler.makePoll);
 
-	app.route('/api/mypolls').get(isLoggedIn, pollHandler.getMyPolls);
+	app.route('/api/:id/mypolls').get(isLoggedIn, pollHandler.getMyPolls);
 
 
 	app.route('/api/poll/:id')
