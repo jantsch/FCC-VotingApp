@@ -98,7 +98,10 @@ module.exports = function (app, passport) {
 
 	app.route('/poll/:id')
 			.get(function (req, res) {
-			res.sendFile(path + '/public/poll.html');
+				if(req.isAuthenticated())
+					res.sendFile(path + '/public/poll.html');
+				else
+					res.sendFile(path + '/public/poll.html');
 		});
 
 	app.route('/api/item/:id')
