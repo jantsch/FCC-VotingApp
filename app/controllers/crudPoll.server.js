@@ -37,6 +37,32 @@ function PollHandler () {
 		
 	};
 	
+this.votePoll = function (req, res) {
+	console.log(req.body);
+	console.log(req.params.id);
+		Poll.find({_id: req.params.id},function(err,item){
+			item.totalVotes++;
+			item.save(function(err){
+				if(err)
+					throw err;
+				
+				res.json(item);
+
+
+			})
+
+
+
+		})
+		newPoll.save(function (err) {
+						if (err) {
+							throw err;
+						}
+						res.redirect('/poll/'+ newPoll._id);
+		})
+			
+		};
+
 
 	this.makePoll = function (req, res) {
 		var newPoll = new Poll();		

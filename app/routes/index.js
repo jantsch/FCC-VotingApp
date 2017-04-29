@@ -93,6 +93,8 @@ module.exports = function (app, passport) {
 			.get(pollHandler.getAllPolls)
 			.post(isLoggedIn, pollHandler.makePoll);
 
+	
+
 	app.route('/api/:id/mypolls').get(isLoggedIn, pollHandler.getMyPolls);
 
 
@@ -104,8 +106,11 @@ module.exports = function (app, passport) {
 					res.sendFile(path + '/public/poll.html');
 		});
 
+
+
 	app.route('/api/item/:id')
-			.get(pollHandler.getPoll);
+			.get(pollHandler.getPoll)
+			.post(pollHandler.votePoll);
 			//.delete(isLoggenIn, pollHandler.deletePoll);
 
 
