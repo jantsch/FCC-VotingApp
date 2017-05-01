@@ -101,7 +101,7 @@ module.exports = function (app, passport) {
 	app.route('/poll/:id')
 			.get(function (req, res) {
 				if(req.isAuthenticated())
-					res.sendFile(path + '/public/poll.html');
+					res.sendFile(path + '/public/poll-auth.html');
 				else
 					res.sendFile(path + '/public/poll.html');
 		});
