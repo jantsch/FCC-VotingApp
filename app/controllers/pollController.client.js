@@ -4,20 +4,22 @@
 
    var apiUrl = appUrl + '/api/item/'+getId();
 
+$(document).ready(function(){
+       $('#submitButton').click( function() {
+            alert("LEGAL");
+             $.ajax({
+                type: "get",
+                url: apiUrl, 
+                dataType: "json",
+            }).done(function ( data ) {
+                alert("LEGAL");
+
+            })
+            })
+    });
 
 
 
-$('#submitButton').click( function() {
-alert("LEGAL");
- $.ajax({
-    type: "get",
-    url: apiUrl, 
-    dataType: "json",
-}).done(function ( data ) {
-    alert("LEGAL");
-
-})
-})
 
    $.ajax({
     type: "get",
