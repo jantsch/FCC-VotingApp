@@ -24,7 +24,7 @@
      
 });
 
-$( "#teste" ).submit(function( event ) {
+$( "#teste" ).click(function( event ) {
  
   alert( "Handler for .submit() called." );
   event.preventDefault();
