@@ -18,10 +18,10 @@ var Poll = new Schema({
 });
 
 Poll.methods.getStatisticData = function(){
-	var str = ""
+	var str = "";
 	this.options.forEach(function(element,index){
-		var str2 = {index: element};
-		var str = str.concat(str2);
+		var str2 = {element._id: element.votes};
+		str = str.concat(str2);
 
 	})
 
