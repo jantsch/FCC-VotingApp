@@ -24,17 +24,17 @@
      
 });
 
-  $( "form" ).submit(function( ) {
-    console.log("teste");
-    alert( "Handler for .submit() called." );
-    //event.preventDefault();
-  });
+$( "#teste" ).submit(function( event ) {
+  event.preventDefault();
+  alert( "Handler for .submit() called." );
+  event.preventDefault();
+});
 
 
 
-  function getId()
-  {
-      var id_array = window.location.href.split('/');
-      return id_array[id_array.length -1];
-  }
+function getId()
+{
+    var id_array = window.location.href.split('/');
+    return id_array[id_array.length -1];
+}
 })();
