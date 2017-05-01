@@ -24,8 +24,8 @@ $(document).ready(function(){
                 url: apiUrl, 
                 dataType: "json",
             }).done(function ( data,textStatus ) {
-              console.log(textStatus);
-              //window.location.replace("http://stackoverflow.com");
+              if(textStatus=="success");
+              window.location.replace("https://fcc-votingapp-rj.herokuapp.com/mypolls");
             })
             })
       
