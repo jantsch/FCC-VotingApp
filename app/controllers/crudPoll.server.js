@@ -33,8 +33,7 @@ function PollHandler () {
 				if (err) { throw err; }		
 				res.json(result);
 
-		})
-		
+		})	
 	};
 	
 this.votePoll = function (req, res) {
