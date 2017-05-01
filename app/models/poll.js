@@ -17,5 +17,24 @@ var Poll = new Schema({
 	
 });
 
+Poll.methods.getStatisticData = function(){
+	var str = ""
+	this.options.forEach(function(element,index){
+		var str2 = {index: element};
+		var str = str.concat(str2);
+
+	})
+
+	console.log("CHEGUEIIIIIIIII:" + str);
+	console.log("CHEGUEIIIIIIIII:" + {"totaVotes": this.totalVotes,str
+			});
+
+	return {"totaVotes": this.totalVotes,str
+			}
+
+
+
+}
+
 
 module.exports = mongoose.model('Poll', Poll);

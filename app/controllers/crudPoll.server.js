@@ -54,7 +54,7 @@ this.votePoll = function (req, res) {
 				if(err)
 					throw err;
 				
-				res.json(item);
+				res.json(item.getStatisticData());
 
 
 			})
