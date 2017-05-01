@@ -27,13 +27,13 @@ Poll.methods.getStatisticData = function(){
    var obj = new Object();
    obj.id = element._id;
    obj.votes  = element.votes;
-   var jsonString= JSON.stringify(obj);
-   str.push(jsonString);
+   //var jsonString= JSON.stringify(obj);
+   str.push(obj);
 
 	})
-	console.log(str);
-	str.push(JSON.stringify({"totaVotes": this.totalVotes}));
-	console.log(str.toString());
+	console.log(JSON.stringify(str));
+	//str.push(JSON.stringify({"totaVotes": this.totalVotes}));
+	//console.log(str.toString());
 		
 
 	return {"totaVotes": this.totalVotes}
