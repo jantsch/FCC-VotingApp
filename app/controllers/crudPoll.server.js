@@ -49,7 +49,7 @@ this.votePoll = function (req, res) {
 				if(err)
 					throw err;
 				
-				res.json(item.getStatisticData());
+				res.json(item);
 			})
 		})
 };

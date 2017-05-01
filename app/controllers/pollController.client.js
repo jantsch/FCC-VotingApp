@@ -14,6 +14,7 @@ $(document).ready(function(){
                 dataType: "json",
             }).done(function ( data ) {
                 console.log(data);
+                $("Votes").text(data.totalVotes);
 
             })
             })
