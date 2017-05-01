@@ -6,6 +6,19 @@
 
 
 
+
+$('#submitButton').click( function() {
+alert("LEGAL");
+ $.ajax({
+    type: "get",
+    url: apiUrl, 
+    dataType: "json",
+}).done(function ( data ) {
+    alert("LEGAL");
+
+})
+})
+
    $.ajax({
     type: "get",
     url: apiUrl, 
@@ -24,17 +37,6 @@
      
 });
 
-$('#submitButton').click( function() {
-alert("LEGAL");
- $.ajax({
-    type: "get",
-    url: apiUrl, 
-    dataType: "json",
-}).done(function ( data ) {
-    alert("LEGAL");
-
-})
-})
 
 
 
