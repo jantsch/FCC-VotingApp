@@ -5,7 +5,10 @@
    var apiUrl = appUrl + '/api/item/'+getId();
 
 $(document).ready(function(){
-       $('#submitButton').click( function() {
+      
+    });
+
+ $('#submitVote').click( function() {
             alert("LEGAL");
              $.ajax({
                 type: "get",
@@ -16,9 +19,6 @@ $(document).ready(function(){
 
             })
             })
-    });
-
-
 
 
    $.ajax({
