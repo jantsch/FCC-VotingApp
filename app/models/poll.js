@@ -20,17 +20,14 @@ var Poll = new Schema({
 Poll.methods.getStatisticData = function(){
 	var str = "";
 	this.options.forEach(function(element,index){
-		var str2 = {element._id: element.votes};
-		str = str.concat(str2);
+		console.log(element)
+		
 
 	})
 
-	console.log("CHEGUEIIIIIIIII:" + str);
-	console.log("CHEGUEIIIIIIIII:" + {"totaVotes": this.totalVotes,str
-			});
+	
 
-	return {"totaVotes": this.totalVotes,str
-			}
+	return {"totaVotes": this.totalVotes}
 
 
 
