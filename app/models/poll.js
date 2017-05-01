@@ -20,8 +20,10 @@ var Poll = new Schema({
 Poll.methods.getStatisticData = function(){
 	var str = "";
 	this.options.forEach(function(element,index){
-		console.log(element)
-		
+		console.log(element);
+		console.log(element.votes);
+		console.log(element._id);
+
 
 	})
 
