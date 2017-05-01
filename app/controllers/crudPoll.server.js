@@ -39,6 +39,8 @@ function PollHandler () {
 this.votePoll = function (req, res) {
 	console.log(req.body);
 	console.log(req.params.id);
+	console.log(req.body.option_id);
+
 		Poll.find({_id: req.params.id},function(err,item){
 			item.totalVotes++;
 			item.save(function(err){

@@ -10,7 +10,7 @@ $(document).ready(function(){
              $.ajax({
                 type: "post",
                 url: apiUrl, 
-                data: { name: "John", time: "2pm" },
+                data: { option_id: $('input[name=radios]:checked').val()},
                 dataType: "json",
             }).done(function ( data ) {
                 alert("LEGAL");
