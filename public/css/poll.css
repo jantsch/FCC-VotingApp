@@ -12,3 +12,6 @@ button{
 .jumbotron{ 
 	margin-top: 77px;
 }
+#delPoll{
+	float:right;
+}

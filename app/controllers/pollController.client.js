@@ -6,7 +6,6 @@
 
 $(document).ready(function(){
       $('#submitVote').click( function() {
-             alert($('input[name=radios]:checked').val()); 
              $.ajax({
                 type: "post",
                 url: apiUrl, 
