@@ -32,7 +32,9 @@ Poll.methods.getStatisticData = function(){
 
 	})
 	console.log(str);
-	
+	str.push(JSON.stringify({"totaVotes": this.totalVotes}));
+	console.log(str.toString());
+		
 
 	return {"totaVotes": this.totalVotes}
 
