@@ -13,7 +13,7 @@ $(document).ready(function(){
                 data: { option_id: $('input[name=radios]:checked').val()},
                 dataType: "json",
             }).done(function ( data ) {
-                alert("LEGAL");
+                console.log(data);
 
             })
             })

@@ -43,7 +43,7 @@ this.votePoll = function (req, res) {
 
 		Poll.findOne({_id: req.params.id},function(err,item){
 			item.totalVotes++;
-			item.option.forEach(function(element){
+			item.options.forEach(function(element){
 				if(element._id == req.body.option_id){
 					element.votes = element.votes +1;
 					console.log("FOUND OPTION");
