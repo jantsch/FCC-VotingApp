@@ -24,11 +24,9 @@
      
 });
 
-$("#teste").click(function(  ) {
- 
-  alert( "Handler for .submit() called." );
-  //event.preventDefault();
-});
+$('#submitButton').click( function() {
+alert("LEGAL");
+})
 
 
 
