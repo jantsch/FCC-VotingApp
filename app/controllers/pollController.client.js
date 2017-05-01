@@ -23,8 +23,8 @@ $(document).ready(function(){
                 type: "delete",
                 url: apiUrl, 
                 dataType: "json",
-            }).done(function ( data ) {
-            
+            }).done(function ( data,xhr ) {
+              console.log(xhr.status);
             })
             })
       

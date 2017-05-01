@@ -78,7 +78,7 @@ this.votePoll = function (req, res) {
 
 	this.delPoll = function(req,res){
 		Poll.remove({ _id: req.params.id}, function(err) {
-	    if (!err) {
+	    if (err) {
 	            res.sendStatus(500);
 	    }
 	    else {
