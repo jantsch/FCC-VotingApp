@@ -18,15 +18,20 @@ var Poll = new Schema({
 });
 
 Poll.methods.getStatisticData = function(){
-	var str = "";
+	var str = [];
 	this.options.forEach(function(element,index){
 		console.log(element);
 		console.log(element.votes);
 		console.log(element._id);
 
+   var obj = new Object();
+   obj.id = element._id;
+   obj.votes  = element.votes;
+   var jsonString= JSON.stringify(obj);
+   str.push(jsonString);
 
 	})
-
+	console.log(str);
 	
 
 	return {"totaVotes": this.totalVotes}

@@ -37,16 +37,11 @@ function PollHandler () {
 	};
 	
 this.votePoll = function (req, res) {
-	console.log(req.body);
-	console.log(req.params.id);
-	console.log(req.body.option_id);
-
 		Poll.findOne({_id: req.params.id},function(err,item){
 			item.totalVotes++;
 			item.options.forEach(function(element){
 				if(element._id == req.body.option_id){
 					element.votes = element.votes +1;
-					console.log("FOUND OPTION");
 				}
 				})
 			
@@ -55,8 +50,6 @@ this.votePoll = function (req, res) {
 					throw err;
 				
 				res.json(item.getStatisticData());
-
-
 			})
 		})
 };
