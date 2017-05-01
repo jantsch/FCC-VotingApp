@@ -30,7 +30,7 @@ $(document).ready(function(){
 
       console.log(data.owner_name)
       data.options.forEach(function(item){
-          $('#tablebody').append("<tr><td><div class=\"radio\"><label><input type=\"radio\" id='"+item._id+"' name=\"radios\" values=\""+item._id+"\">" +
+          $('#tablebody').append("<tr><td><div class=\"radio\"><label><input type=\"radio\" name=\"radios\" value=\""+item._id+"\">" +
                               item.text + "</label></div></td><td></td></tr>");
 
       })
