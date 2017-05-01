@@ -110,7 +110,8 @@ module.exports = function (app, passport) {
 
 	app.route('/api/item/:id')
 			.get(pollHandler.getPoll)
-			.post(pollHandler.votePoll);
+			.post(pollHandler.votePoll)
+			.delete(pollHandler.delPoll);
 			//.delete(isLoggenIn, pollHandler.deletePoll);
 
 

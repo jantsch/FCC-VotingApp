@@ -15,8 +15,19 @@ $(document).ready(function(){
                 console.log(data);
                 $("#Votes").text(data.totalVotes);
 
+            })})
+    
+
+    $('#delPoll').click( function() {
+             $.ajax({
+                type: "delete",
+                url: apiUrl, 
+                dataType: "json",
+            }).done(function ( data ) {
+            
             })
             })
+      
 
 
     $.ajax({
