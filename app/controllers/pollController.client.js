@@ -25,6 +25,7 @@ $(document).ready(function(){
                 dataType: "json",
             }).done(function ( data,xhr ) {
               console.log(xhr.status);
+              //window.location.replace("http://stackoverflow.com");
             })
             })
       
