@@ -5,10 +5,7 @@
    var apiUrl = appUrl + '/api/item/'+getId();
 
 $(document).ready(function(){
-      
-    });
-
- $('#submitVote').click( function() {
+      $('#submitVote').click( function() {
             alert("LEGAL");
              $.ajax({
                 type: "get",
@@ -21,12 +18,12 @@ $(document).ready(function(){
             })
 
 
-   $.ajax({
-    type: "get",
-    url: apiUrl, 
-    dataType: "json",
-}).done(function ( data ) {
-    console.log("ajax callback response:" + data);
+    $.ajax({
+        type: "get",
+        url: apiUrl, 
+        dataType: "json",
+    }).done(function ( data ) {
+      console.log("ajax callback response:" + data);
       $('#question-name').text(data.name);
       $('#question-owner').text("by " + data.owner_name);
 
@@ -38,6 +35,12 @@ $(document).ready(function(){
       })
      
 });
+
+    });
+
+ 
+
+  
 
 
 
