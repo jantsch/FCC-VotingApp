@@ -23,8 +23,8 @@ $(document).ready(function(){
                 type: "delete",
                 url: apiUrl, 
                 dataType: "json",
-            }).done(function ( data,xhr ) {
-              console.log(xhr.status);
+            }).done(function ( data,textStatus ) {
+              console.log(textStatus);
               //window.location.replace("http://stackoverflow.com");
             })
             })
