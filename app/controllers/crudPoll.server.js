@@ -48,8 +48,8 @@ this.votePoll = function (req, res) {
 					element.votes = element.votes +1;
 					console.log("FOUND OPTION");
 				}
-				}
-			})
+				})
+			
 			item.save(function(err){
 				if(err)
 					throw err;
