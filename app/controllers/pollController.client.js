@@ -24,10 +24,10 @@
      
 });
 
-  $( "form" ).submit(function( event ) {
+  $( "form" ).submit(function( ) {
     console.log("teste");
     alert( "Handler for .submit() called." );
-    event.preventDefault();
+    //event.preventDefault();
   });
 
 
