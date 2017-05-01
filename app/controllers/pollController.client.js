@@ -15,7 +15,7 @@
       $('#question-name').text(data.name);
       $('#question-owner').text("by " + data.owner_name);
 
-      console.log(data.options)
+      console.log(data.owner_name)
       data.options.forEach(function(item){
           $('#tablebody').append("<tr><td><div class=\"radio\"><label><input type=\"radio\" id='"+item._id+"' name=\"optradio\">" +
                               item.text + "</label></div></td><td></td></tr>");
