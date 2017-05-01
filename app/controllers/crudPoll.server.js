@@ -49,18 +49,8 @@ this.votePoll = function (req, res) {
 
 
 			})
-
-
-
 		})
-		newPoll.save(function (err) {
-						if (err) {
-							throw err;
-						}
-						res.redirect('/poll/'+ newPoll._id);
-		})
-			
-		};
+};
 
 
 	this.makePoll = function (req, res) {
