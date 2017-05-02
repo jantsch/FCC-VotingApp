@@ -38,27 +38,69 @@ function PollHandler () {
 	
 this.votePoll = function (req, res) {
 		Poll.findOne({_id: req.params.id},function(err,item){
-			item.totalVotes++;
-			item.options.forEach(function(element){
-				if(element._id == req.body.option_id){
-					element.votes = element.votes +1;
-				}
-				})
+
 			if(req.user != undefined)
-				item.vote_details.push({id:req.user._id});
-			else
-			{	
-				var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-				console.log("IP "+ ip)
-				item.vote_details.push({id: ip});
+			{
+				var voted = item.vote_details.find(function (element) { 
+				    return element.id === req.user._id;
+				})
+				if(voted == null)
+				{
+						item.totalVotes++;
+						item.options.forEach(function(element){
+							if(element._id == req.body.option_id){
+								element.votes = element.votes +1;
+							}
+							})
+						item.vote_details.push({id:req.user._id});
+
+						item.save(function(err){
+							if(err)
+								throw err;
+							
+							res.json(item);
+						})
+
+				}
+				else
+				{
+					res.json("err": "User has already voted.");
+				}
 			}
+			else
+			{
+				var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 				
-			item.save(function(err){
-				if(err)
-					throw err;
-				
-				res.json(item);
-			})
+				var voted = item.vote_details.find(function (element) { 
+				    return element.id === ip;
+				})
+				if(voted == null)
+				{
+						item.totalVotes++;
+						item.options.forEach(function(element){
+							if(element._id == req.body.option_id){
+								element.votes = element.votes +1;
+							}
+							})
+						item.vote_details.push({id: ip});
+						item.save(function(err){
+							if(err)
+								throw err;
+							
+							res.json(item);
+						})
+
+				}
+				else
+				{
+						res.json("err": "User has already voted.");
+
+				}
+
+
+			}
+			
+			
 		})
 };
 

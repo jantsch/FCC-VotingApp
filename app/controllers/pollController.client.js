@@ -12,6 +12,7 @@ $(document).ready(function(){
                 data: { option_id: $('input[name=radios]:checked').val()},
                 dataType: "json",
             }).done(function ( data ) {
+              console.log(data);
               $("#VoteResults").text("");
               var datapoints =[];
               data.options.forEach(function(element){
