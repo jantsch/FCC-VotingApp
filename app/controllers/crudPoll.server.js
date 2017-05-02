@@ -64,7 +64,7 @@ this.votePoll = function (req, res) {
 				}
 				else
 				{
-					res.json("err": "User has already voted.");
+					res.json({"err": "User has already voted."});
 				}
 			}
 			else
@@ -93,7 +93,7 @@ this.votePoll = function (req, res) {
 				}
 				else
 				{
-						res.json("err": "User has already voted.");
+						res.json({"err": "User has already voted."});
 
 				}
 
