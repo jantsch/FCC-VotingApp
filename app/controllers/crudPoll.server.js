@@ -42,7 +42,7 @@ this.votePoll = function (req, res) {
 			if(req.user != undefined)
 			{
 				var voted = item.vote_details.find(function (element) { 
-				    return element.id === req.user._id;
+				    return element.id == req.user._id;
 				})
 				if(voted == null)
 				{

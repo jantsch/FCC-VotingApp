@@ -35,11 +35,8 @@ $(document).ready(function(){
                     ]
                   });
                   chart.render();
-            })
-            .fail(function(xhr, status, error){
-              alert(error);
-              alert(xhr.responseText);
-            
+            }).fail(function(xhr, status, error){
+              alert("Impossible to vote: " + xhr.responseText);            
             })})
     
 
