@@ -37,7 +37,9 @@ $(document).ready(function(){
                   chart.render();
             })
             .fail(function(xhr, status, error){
-              alert("some error");
+              alert(error);
+              alert(xhr.responseText);
+            
             })})
     
 
