@@ -36,7 +36,7 @@ $(document).ready(function(){
                           startAngle: 60,                          
                           toolTipContent: "{legendText}: {y} - <strong>#percent% </strong>",          
                           showInLegend: true,
-                          dataPoints: datapoints.toString()    
+                          dataPoints: datapoints    
                           
                         }
                     ]
