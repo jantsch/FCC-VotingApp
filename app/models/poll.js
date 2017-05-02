@@ -14,6 +14,10 @@ var Poll = new Schema({
 		  votes: {type:Number, default: 0}
 	   }
   ],
+  	vote_details:[
+  		{ id: String }
+
+  	]
 	
 });
 

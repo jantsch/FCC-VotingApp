@@ -27,23 +27,11 @@ var User = new Schema({
 User.methods.getObj = function(){
 	
 	if(typeof this.github.id == "string")
-		{	var obj = this.github;
-			obj['provider'] = "github";
-			console.log(obj);
-			return  obj;
-		}
+		return  this.github;
 	else if(typeof this.twitter.id == "string")
-		{
-			var obj = this.twitter;
-			obj['provider'] = "twitter";
-			return  obj;
-		}
+		return this.twitter;
 	else 
-		{
-			var obj = this.facebook;
-			obj['provider'] = "facebook";
-			return  obj;
-		}
+		return this.facebook;
 }
 
 
