@@ -12,12 +12,12 @@ $(document).ready(function(){
                 data: { option_id: $('input[name=radios]:checked').val()},
                 dataType: "json",
             }).done(function ( data ) {
+              $("#VoteResults").text("");
               var datapoints =[];
               data.options.forEach(function(element){
                 datapoints.push({ "y" : element.votes,"legendText": element.text}); 
 
               })
-
                var chart = new CanvasJS.Chart("chartContainer",
                   {
                     backgroundColor: "#eee",
