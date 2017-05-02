@@ -19,7 +19,7 @@ $(document).ready(function(){
                 console.log(element);
                 console.log(element.text);
                 console.log(element.votes);
-                datapoints.push(JSON.stringify({"element.text" : element.votes})); 
+                datapoints.push(JSON.stringify({"legendText": element.text , "y" : element.votes})); 
 
               })
 
