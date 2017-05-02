@@ -11,6 +11,7 @@ $(document).ready(function(){
                 url: apiUrl, 
                 data: { option_id: $('input[name=radios]:checked').val()},
                 dataType: "json",
+
             }).done(function ( data ) {
               console.log(data);
               $("#VoteResults").text("");
@@ -34,6 +35,9 @@ $(document).ready(function(){
                     ]
                   });
                   chart.render();
+            })
+            .fail(function(xhr, status, error){
+              alert("some error");
             })})
     
 
