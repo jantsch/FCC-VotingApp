@@ -27,7 +27,10 @@ var User = new Schema({
 User.methods.getObj = function(){
 	
 	if(typeof this.github.id == "string")
-		return  this.github;
+		{	var obj = this.github;
+			obj["provider"] = "github";
+			return  obj;
+		}
 	else if(typeof this.twitter.id == "string")
 		return this.twitter;
 	else 
