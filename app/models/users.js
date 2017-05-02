@@ -29,6 +29,7 @@ User.methods.getObj = function(){
 	if(typeof this.github.id == "string")
 		{	var obj = this.github;
 			obj['provider'] = "github";
+			console.log(obj);
 			return  obj;
 		}
 	else if(typeof this.twitter.id == "string")
