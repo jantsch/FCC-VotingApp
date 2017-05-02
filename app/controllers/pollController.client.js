@@ -53,12 +53,11 @@ $(document).ready(function(){
                   url: apiUrl, 
                   dataType: "json",
             }).done(function ( data ) {
-                console.log("ajax callback response:" + data);
                 $('#question-name').text(data.name);
                 $('#question-owner').text("by " + data.owner_name);
-                $("#twitter-link").attr('href', 'https://twitter.com/intent/tweet?url=https%3A%2F%2Ffcc-votingapp-rj.herokuapp.com%2Fpolls%2F'+getId()+'&amp;text=FCC-Voting-RJ %20%7C%20'+data.name)
+                $("#twitter-link").attr('href', 'https://twitter.com/intent/tweet?url=https%3A%2F%2Ffcc-votingapp-rj.herokuapp.com%2Fpolls%2F'+getId()+'&amp;text=FCC-Voting-RJ %20%7C%20'+data.name+'%20%7C%20')
 
-                console.log(data.owner_name)
+            
                 data.options.forEach(function(item){
                     $('#tablebody').append("<tr><td><div class=\"radio\"><label><input type=\"radio\" name=\"radios\" value=\""+item._id+"\">" +
                                         item.text + "</label></div></td><td></td></tr>");
