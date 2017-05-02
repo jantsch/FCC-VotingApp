@@ -13,7 +13,17 @@ $(document).ready(function(){
                 dataType: "json",
             }).done(function ( data ) {
                 console.log(data);
-                $("#Votes").text(data.totalVotes);
+               $("#Votes").text(data.totalVotes);
+              var datapoints =[];
+              data.options.forEach(function(element){
+
+                datapoints(JSON.stringify({element.text : element.votes}) 
+
+              })
+
+              console.log("TESTE: "+datapoints);
+
+
                var chart = new CanvasJS.Chart("chartContainer",
                   {
                     backgroundColor: "#eee",
