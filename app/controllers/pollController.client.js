@@ -46,8 +46,7 @@ $(document).ready(function(){
               window.location.replace("https://fcc-votingapp-rj.herokuapp.com/mypolls");
             })})
       
-        $("#twitter-link").attr('href', 'https://twitter.com/intent/tweet?url=https%3A%2F%2Ffcc-votingapp-rj.herokuapp.com%2Fpolls%2F'+getId()+'&amp;text=%7C%20FCC-Voting-RJ' 
-          + encodeURIComponent('"' + data.quote + '" ' + data.author));
+        $("#twitter-link").attr('href', 'https://twitter.com/intent/tweet?url=https%3A%2F%2Ffcc-votingapp-rj.herokuapp.com%2Fpolls%2F'+getId()+'&amp;text=%7C%20FCC-Voting-RJ')
 
        $.ajax({
                   type: "get",
