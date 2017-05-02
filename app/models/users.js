@@ -28,13 +28,21 @@ User.methods.getObj = function(){
 	
 	if(typeof this.github.id == "string")
 		{	var obj = this.github;
-			obj["provider"] = "github";
+			obj['provider'] = "github";
 			return  obj;
 		}
 	else if(typeof this.twitter.id == "string")
-		return this.twitter;
+		{
+			var obj = this.twitter;
+			obj['provider'] = "twitter";
+			return  obj;
+		}
 	else 
-		return this.facebook;
+		{
+			var obj = this.facebook;
+			obj['provider'] = "facebook";
+			return  obj;
+		}
 }
 
 
