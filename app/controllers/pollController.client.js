@@ -19,7 +19,7 @@ $(document).ready(function(){
                 console.log(element);
                 console.log(element.text);
                 console.log(element.votes);
-                datapoints.push(JSON.stringify({ "y" : element.votes,"legendText": element.text})); 
+                datapoints.push({ "y" : element.votes,"legendText": element.text}); 
 
               })
 
@@ -36,7 +36,7 @@ $(document).ready(function(){
                           startAngle: 60,                          
                           toolTipContent: "{legendText}: {y} - <strong>#percent% </strong>",          
                           showInLegend: true,
-                          dataPoints: JSON.stringify(datapoints)
+                          dataPoints: datapoints
                         }
                     ]
                   });
