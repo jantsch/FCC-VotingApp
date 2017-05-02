@@ -17,7 +17,7 @@ $(document).ready(function(){
               var datapoints =[];
               data.options.forEach(function(element){
 
-                datapoints(JSON.stringify({element.text : element.votes}) 
+                datapoints(JSON.stringify({element.text : element.votes})); 
 
               })
 
