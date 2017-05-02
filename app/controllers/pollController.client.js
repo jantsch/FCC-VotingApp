@@ -25,9 +25,9 @@ $(document).ready(function(){
                           toolTipContent: "{legendText}: {y} - <strong>#percent% </strong>",          
                           showInLegend: true,
                           dataPoints: [
-                            {y: 65899660, indexLabel: "Barack Obama #percent%", legendText: "Barack Obama" },
-                            {y: 60929152, indexLabel: "Mitt Romney #percent%", legendText: "Mitt Romney" },
-                            {y: 2175850,  indexLabel: "Others #percent%", legendText: "Others" }      
+                            {y: 65899660,  legendText: "Barack Obama" },
+                            {y: 60929152,  legendText: "Mitt Romney" },
+                            {y: 2175850,   legendText: "Others" }      
                           ]
                         }
                     ]
