@@ -44,8 +44,15 @@ this.votePoll = function (req, res) {
 					element.votes = element.votes +1;
 				}
 				})
-			item.vote_details.push(req.user._id);
-			
+			if(req.user != undefined)
+				item.vote_details.push(req.user._id);
+			else
+			{	
+				var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+				console.log("IP "+ ip)
+				item.vote_details.push(ip);
+			}
+				
 			item.save(function(err){
 				if(err)
 					throw err;
