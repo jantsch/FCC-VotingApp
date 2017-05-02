@@ -56,7 +56,7 @@ $(document).ready(function(){
                 console.log("ajax callback response:" + data);
                 $('#question-name').text(data.name);
                 $('#question-owner').text("by " + data.owner_name);
-                $("#twitter-link").attr('href', 'https://twitter.com/intent/tweet?url=https%3A%2F%2Ffcc-votingapp-rj.herokuapp.com%2Fpolls%2F'+getId()+'&amp;text=FCC-Voting-RJ %20%7C%20'+data.name+')
+                $("#twitter-link").attr('href', 'https://twitter.com/intent/tweet?url=https%3A%2F%2Ffcc-votingapp-rj.herokuapp.com%2Fpolls%2F'+getId()+'&amp;text=FCC-Voting-RJ %20%7C%20'+data.name+)
 
                 console.log(data.owner_name)
                 data.options.forEach(function(item){
