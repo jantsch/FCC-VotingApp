@@ -44,6 +44,7 @@ this.votePoll = function (req, res) {
 					element.votes = element.votes +1;
 				}
 				})
+			item.vote_details.push(req.user._id);
 			
 			item.save(function(err){
 				if(err)
