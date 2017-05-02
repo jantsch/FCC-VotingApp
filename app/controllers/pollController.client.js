@@ -18,17 +18,23 @@ $(document).ready(function(){
                   {
                     animationEnabled: true,     
                     data: [
-                    {        
-                      type: "doughnut",
-                      startAngle: 60,                          
-                      toolTipContent: "{legendText}: {y} - <strong>#percent% </strong>",          
-                      showInLegend: true,
-                      dataPoints: [
-                        {y: 65899660, indexLabel: "Barack Obama #percent%", legendText: "Barack Obama" },
-                        {y: 60929152, indexLabel: "Mitt Romney #percent%", legendText: "Mitt Romney" },
-                        {y: 2175850,  indexLabel: "Others #percent%", legendText: "Others" }      
-                      ]
-                    }
+                    {
+                          //startAngle: 45,
+                          indexLabelFontSize: 20,
+                          indexLabelFontFamily: "Garamond",
+                          indexLabelFontColor: "darkgrey",
+                          indexLabelLineColor: "darkgrey",
+                          indexLabelPlacement: "outside",
+                          type: "doughnut",
+                          showInLegend: true,
+                          dataPoints: [
+                            {  y: 53.37, legendText:"Android 53%", indexLabel: "Android 53%" },
+                            {  y: 35.0, legendText:"iOS 35%", indexLabel: "Apple iOS 35%" },
+                            {  y: 7, legendText:"Blackberry 7%", indexLabel: "Blackberry 7%" },
+                            {  y: 2, legendText:"Windows 2%", indexLabel: "Windows Phone 2%" },
+                            {  y: 5, legendText:"Others 5%", indexLabel: "Others 5%" }
+                          ]
+                        }
                     ]
                   });
                   chart.render();
